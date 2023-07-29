@@ -1,0 +1,161 @@
+examples/ex1.c:56:3: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  DEBUG("=> Kicking ack:%d ... (%sABLED)", ack, enabled ? "EN" : "DIS");
+  ^
+src/api.c:34:6: style: Local variable 'sd' shadows outer variable [shadowVariable]
+ int sd;
+     ^
+src/api.c:24:16: note: Shadowed declaration
+static int     sd = -1;
+               ^
+src/api.c:34:6: note: Shadow variable
+ int sd;
+     ^
+src/api.c:135:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/conf.c:127:6: style: Local variable 'enabled' shadows outer variable [shadowVariable]
+ int enabled, prio;
+     ^
+src/wdt.h:81:14: note: Shadowed declaration
+extern int   enabled;
+             ^
+src/conf.c:127:6: note: Shadow variable
+ int enabled, prio;
+     ^
+src/conf.c:40:7: style: Local variable 'period' shadows outer variable [shadowVariable]
+  int period, logmark;
+      ^
+src/wdt.h:83:14: note: Shadowed declaration
+extern int   period;
+             ^
+src/conf.c:40:7: note: Shadow variable
+  int period, logmark;
+      ^
+src/conf.c:63:6: style: Local variable 'period' shadows outer variable [shadowVariable]
+ int period, timeout;
+     ^
+src/wdt.h:83:14: note: Shadowed declaration
+extern int   period;
+             ^
+src/conf.c:63:6: note: Shadow variable
+ int period, timeout;
+     ^
+src/conf.c:63:14: style: Local variable 'timeout' shadows outer variable [shadowVariable]
+ int period, timeout;
+             ^
+src/wdt.h:84:14: note: Shadowed declaration
+extern int   timeout;
+             ^
+src/conf.c:63:14: note: Shadow variable
+ int period, timeout;
+             ^
+src/filenr.c:57:2: warning: %d in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+ sscanf(buf, "%d\t%d\%d", &curr, &un, &max);
+ ^
+src/filenr.c:57:2: warning: %d in format string (no. 2) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+ sscanf(buf, "%d\t%d\%d", &curr, &un, &max);
+ ^
+src/filenr.c:57:2: warning: %d in format string (no. 3) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+ sscanf(buf, "%d\t%d\%d", &curr, &un, &max);
+ ^
+src/finit.c:41:32: style:inconclusive: Function 'finit_register' argument 1 names different: declaration 'dev' definition 'devnode'. [funcArgNamesDifferent]
+int finit_register(const char *devnode)
+                               ^
+src/finit.h:36:34: note: Function 'finit_register' argument 1 names different: declaration 'dev' definition 'devnode'.
+int finit_register  (const char *dev);
+                                 ^
+src/finit.c:41:32: note: Function 'finit_register' argument 1 names different: declaration 'dev' definition 'devnode'.
+int finit_register(const char *devnode)
+                               ^
+src/finit.c:111:32: style:inconclusive: Function 'finit_handover' argument 1 names different: declaration 'dev' definition 'devnode'. [funcArgNamesDifferent]
+int finit_handover(const char *devnode)
+                               ^
+src/finit.h:37:34: note: Function 'finit_handover' argument 1 names different: declaration 'dev' definition 'devnode'.
+int finit_handover  (const char *dev);
+                                 ^
+src/finit.c:111:32: note: Function 'finit_handover' argument 1 names different: declaration 'dev' definition 'devnode'.
+int finit_handover(const char *devnode)
+                               ^
+src/rrfile.c:44:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/rrfile.c:75:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/supervisor.c:104:6: style: Local variable 'timeout' shadows outer variable [shadowVariable]
+ int timeout;
+     ^
+src/wdt.h:84:14: note: Shadowed declaration
+extern int   timeout;
+             ^
+src/supervisor.c:104:6: note: Shadow variable
+ int timeout;
+     ^
+src/supervisor.c:313:8: style: Local variable 'timeout' shadows outer variable [shadowVariable]
+   int timeout = p->timeout;
+       ^
+src/wdt.h:84:14: note: Shadowed declaration
+extern int   timeout;
+             ^
+src/supervisor.c:313:8: note: Shadow variable
+   int timeout = p->timeout;
+       ^
+src/supervisor.c:161:12: style: Condition '!wdt_testmode()' is always true [knownConditionTrueFalse]
+ if (rc && !wdt_testmode())
+           ^
+src/watchdogctl.c:273:3: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  log("Kicking watchdog: id %d, ack %d", id, ack);
+  ^
+src/watchdogctl.c:288:2: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ log("Unsubscribing: id %d, ack %d", id, ack);
+ ^
+src/watchdogctl.c:219:0: information: Skipping configuration 'PACKAGE_URL' since the value of 'PACKAGE_URL' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ printf("Project homepage: %s\n", PACKAGE_URL);
+^
+src/watchdogd.c:57:25: style: Condition '!wdt_testmode()' is always true [knownConditionTrueFalse]
+ if (pidfile(prognm) && !wdt_testmode())
+                        ^
+src/watchdogd.c:348:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/wdog.c:186:69: style:inconclusive: Function 'wdog_subscribe' argument 3 names different: declaration 'next_ack' definition 'ack'. [funcArgNamesDifferent]
+int wdog_subscribe(char *label, unsigned int timeout, unsigned int *ack)
+                                                                    ^
+src/wdog.h:95:79: note: Function 'wdog_subscribe' argument 3 names different: declaration 'next_ack' definition 'ack'.
+int   wdog_subscribe        (char *label, unsigned int timeout, unsigned int *next_ack);
+                                                                              ^
+src/wdog.c:186:69: note: Function 'wdog_subscribe' argument 3 names different: declaration 'next_ack' definition 'ack'.
+int wdog_subscribe(char *label, unsigned int timeout, unsigned int *ack)
+                                                                    ^
+src/wdt.c:251:7: warning: %d in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+  if (sscanf(buf, WDT_REASON_WID ": %d", &r->wid) == 1)
+      ^
+src/wdt.c:301:3: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  fprintf(fp, WDT_REASON_WID ": %d\n", r->wid);
+  ^
+src/wdt.c:334:2: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ fprintf(fp, "Watchdog ID  : %d\n", r->wid);
+ ^
+src/wdt.c:109:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/wdt.c:175:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/wdt.c:194:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/wdt.c:219:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/wdt.c:394:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/wdt.c:442:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+src/wdt.c:453:18: style: Condition 'wdt_testmode()' is always false [knownConditionTrueFalse]
+ if (wdt_testmode())
+                 ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
